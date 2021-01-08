@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E46DC474-3CA8-424A-828D-129779DFA744}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Flixte.Core</RootNamespace>
+    <AssemblyName>Flixte.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Integration\YoutubeService.cs" />
+    <Compile Include="Models\AvaliacaoYChannel.cs" />
+    <Compile Include="Models\Categoria.cs" />
+    <Compile Include="Models\Estacao.cs" />
+    <Compile Include="Models\AvaliacaoEstacao.cs" />
+    <Compile Include="Models\EstacaoYChannel.cs" />
+    <Compile Include="Models\SubCategoria.cs" />
+    <Compile Include="Models\Grupo.cs" />
+    <Compile Include="Models\EstacaoUsuario.cs" />
+    <Compile Include="Models\View.cs" />
+    <Compile Include="Models\YChannel.cs" />
+    <Compile Include="Models\YVideo.cs" />
+    <Compile Include="Models\Token.cs" />
+    <Compile Include="Models\TipoUsuario.cs" />
+    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Repositories\EstacaoRepository.cs" />
+    <Compile Include="Repositories\CategoriaRepository.cs" />
+    <Compile Include="Repositories\LogRepository.cs" />
+    <Compile Include="Repositories\SubCategoriaRepository.cs" />
+    <Compile Include="Repositories\GrupoRepository.cs" />
+    <Compile Include="Repositories\ViewRepository.cs" />
+    <Compile Include="Repositories\YChannelRepository.cs" />
+    <Compile Include="Repositories\YVideoRepository.cs" />
+    <Compile Include="Repositories\TokenRepository.cs" />
+    <Compile Include="Repositories\TipoUsuarioRepository.cs" />
+    <Compile Include="Repositories\UsuarioRepository.cs" />
+    <Compile Include="Services\EstacaoService.cs" />
+    <Compile Include="Services\CategoriaService.cs" />
+    <Compile Include="Services\LogService.cs" />
+    <Compile Include="Services\SubCategoriaService.cs" />
+    <Compile Include="Services\GrupoService.cs" />
+    <Compile Include="Services\ViewService.cs" />
+    <Compile Include="Services\YChannelService.cs" />
+    <Compile Include="Services\YVideoService.cs" />
+    <Compile Include="Services\TokenService.cs" />
+    <Compile Include="Services\TipoUsuarioService.cs" />
+    <Compile Include="Services\UsuarioService.cs" />
+    <Compile Include="Util.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Database.Common\Database.Common.csproj">
+      <Project>{2e2b96da-ff46-4f2a-9ccd-095094dcc70a}</Project>
+      <Name>Database.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Google.Apis">
+      <Version>1.40.3</Version>
+    </PackageReference>
+    <PackageReference Include="Google.Apis.YouTube.v3">
+      <Version>1.40.3.1699</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

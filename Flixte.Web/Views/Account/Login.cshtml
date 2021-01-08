@@ -1,0 +1,91 @@
+﻿@using Flixte.Web.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Efetuar login";
+}
+<div class="row">
+    <div style="padding-top:80px">
+        <div class="bg-form" style="float:left">
+            <!-- png -->
+            <img src="../../../Content/images/logo-flixte.png"
+                 srcset="../../../Content/images/logo-flixte@2x.png 2x,
+             ../../../Content/images/logo-flixte@3x.png 3x"
+                 class="logo-flixte" style="margin-left:15%"><br /><br />
+            <div class="LOGIN" style="text-align:center;font-weight:bold;width:100%">LOGIN</div><br /><br />
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <div class="checkbox">
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                            @Html.LabelFor(m => m.RememberMe)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Efetuar login" class="Retngulo-4-copiar" />
+                    </div>
+                </div>
+                <p>
+                    @Html.ActionLink("Registrar-se como novo usuário", "Register")
+                </p>
+                @* Ativar isso assim que você tiver a confirmação de conta ativada para a funcionalidade de redefinição de senha
+                    <p>
+                        @Html.ActionLink("Esqueceu sua senha?", "ForgotPassword")
+                    </p>*@
+                <hr />
+                <br />
+                <div style="width:100%;text-align:center;padding-left:40%">                    
+                        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                        <script>
+                            function onSignIn(googleUser) {
+                                // Useful data for your client-side scripts:
+                                var profile = googleUser.getBasicProfile();
+                                console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+                                console.log('Full Name: ' + profile.getName());
+                                console.log('Given Name: ' + profile.getGivenName());
+                                console.log('Family Name: ' + profile.getFamilyName());
+                                console.log("Image URL: " + profile.getImageUrl());
+                                console.log("Email: " + profile.getEmail());
+
+                                // The ID token you need to pass to your backend:
+                                var id_token = googleUser.getAuthResponse().id_token;
+                                console.log("ID Token: " + id_token);
+                                window.location = '/Account/LoginGoogle?token=' + id_token;
+                            }
+                        </script>
+                    
+                </div><br/><br/>
+            }
+        </div>
+        <div class="Retngulo-2-copiar-3" style="float:right;padding-top:70px">
+            <!-- png -->
+
+            <img src="../../../Content/images/image.png"
+                 srcset="../../../Content/images/image@2x.png 2x,
+             ../../../Content/images/image@3x.png 3x"
+                 class="image">
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

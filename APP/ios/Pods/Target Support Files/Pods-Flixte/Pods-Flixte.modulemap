@@ -1,0 +1,6 @@
+framework module Pods_Flixte {
+  umbrella header "Pods-Flixte-umbrella.h"
+
+  export *
+  module * { export * }
+}

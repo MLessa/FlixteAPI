@@ -1,0 +1,6 @@
+framework module Pods_Flixte_tvOSTests {
+  umbrella header "Pods-Flixte-tvOSTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

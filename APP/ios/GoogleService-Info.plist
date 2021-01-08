@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>148601440449-29i3mrb1ncpgelck2ml8s264oimsu1fs.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.148601440449-29i3mrb1ncpgelck2ml8s264oimsu1fs</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>148601440449-aclb14fhshmd19020pc3ertaejd36gb7.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCKtE-n-cGhc7EewGNqdWYiLzCoKj1aI7E</string>
+	<key>GCM_SENDER_ID</key>
+	<string>148601440449</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.reactjs.native.example.Flixte</string>
+	<key>PROJECT_ID</key>
+	<string>flixte</string>
+	<key>STORAGE_BUCKET</key>
+	<string>flixte.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:148601440449:ios:4b1b3b8429a44e60</string>
+	<key>DATABASE_URL</key>
+	<string>https://flixte.firebaseio.com</string>
+</dict>
+</plist>

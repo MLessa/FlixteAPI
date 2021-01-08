@@ -1,0 +1,22 @@
+﻿@model List<Flixte.Core.Models.Estacao>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+Stations
+<br/><br/>
+@{WriteLiteral(ViewData["ListaRetorno"]);}
+<a href="/Station/Create">Criar Estação</a>
+<table width="100%">
+    <tr>
+        <td>Nome</td>
+        <td>Excluir</td>
+    </tr>
+    
+@foreach (var estacao in Model)
+{
+    <tr>
+        <td><a href="/Station/Edit?id=@estacao.ID">@estacao.Nome</a></td>
+        <td><a href="/Station/Delete?id=@estacao.ID">Excluir</a></td>
+    </tr>
+}
+</table>
